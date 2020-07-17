@@ -1,5 +1,6 @@
 package com.capgemini.bookStore.Entities;
 
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,15 +21,14 @@ import org.hibernate.annotations.DynamicUpdate;
 public class OrderInformation {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq")
-	@SequenceGenerator(name = "seq",initialValue = 1,allocationSize = 100)
 	@Column(name = "order_id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="orderIdGenerator")
+	@SequenceGenerator(name="orderIdGenerator", initialValue=1000)
 	private int orderId;
 	
 	@ManyToOne
 	@JoinColumn(name="customer_id", referencedColumnName = "customer_id")
 	private CustomerInformation customerDetails = new CustomerInformation();
-	
 
 	@Column(name="shipping_address")
 	private String shippingAddress;
@@ -47,6 +47,17 @@ public class OrderInformation {
 	
 	@Column(name="payment_method")
 	private String paymentMethod;
+	
+	@Column(name="order_date")
+	private LocalDate orderDate;
+	
+	public LocalDate getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(LocalDate orderDate) {
+		this.orderDate = orderDate;
+	}
 
 	public int getOrderId() {
 		return orderId;

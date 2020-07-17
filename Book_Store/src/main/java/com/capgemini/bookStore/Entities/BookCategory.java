@@ -1,12 +1,9 @@
 package com.capgemini.bookStore.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Column;import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -29,10 +26,6 @@ public class BookCategory {
 	@Column(name="category_name")
 	@Size(min=5, max=30)
 	private String categoryName;
-	
-	@ManyToOne
-	@JoinColumn(name="book_id", referencedColumnName = "book_id")
-	private BookInformation book = new BookInformation();
 
 	public int getCategoryId() {
 		return categoryId;
