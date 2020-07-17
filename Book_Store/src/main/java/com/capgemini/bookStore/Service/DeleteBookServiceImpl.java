@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 import com.capgemini.bookStore.Dao.DeleteBookDao;
 import com.capgemini.bookStore.Exceptions.DeleteBookException;
 
+/**********************************************************************************************
+ * @author:						Aishwarya Srivastava                                          *
+ * Description:					It is a service class that provides the services for          * 
+ *								deleting the book by checking if it exists or not             *
+ * Version:						1.0                                                           * 
+ * Created:						Date 16-JULY-2020                                              *
+ **********************************************************************************************/
 @Transactional
 @Service
 public class DeleteBookServiceImpl implements DeleteBookService{
