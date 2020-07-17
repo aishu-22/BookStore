@@ -1,5 +1,6 @@
 package com.capgemini.bookStore.Exceptions;
 
+@SuppressWarnings("serial")
 public class DeleteBookException extends Exception{
 	
 	public DeleteBookException() {

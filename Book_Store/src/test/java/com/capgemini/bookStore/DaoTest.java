@@ -1,4 +1,5 @@
 package com.capgemini.bookStore;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -7,29 +8,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.capgemini.bookStore.Exceptions.DeleteBookException;
-import com.capgemini.bookStore.Service.DeleteBookService;
+import com.capgemini.bookStore.Dao.DeleteBookDao;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ServiceTest {
-	@Autowired
-	DeleteBookService service;
-	
-	
-	@Test
-	public void deleteBook() throws DeleteBookException
-	{
-		String expectedValue = "Book Deleted";
-		String actualValue= service.deleteBook(1);
-		assertEquals(expectedValue,actualValue);
-	}
-	@Test
-	public void deleteBook1() throws DeleteBookException
-	{
-		String expectedValue = "Book does not exist!";
-		String actualValue= service.deleteBook(2);
-		assertEquals(expectedValue,actualValue);
-	}
+public class DaoTest {
 
+	@Autowired
+	DeleteBookDao Dao;
+	
+	@Test
+	public void checkBookExist()
+	{
+		boolean expectedValue=true;
+		boolean actualValue=Dao.bookExists(1);
+		assertEquals(expectedValue,actualValue);
+	}
+	
+	@Test
+	public void checkBookNotExist()
+	{
+		boolean expectedValue=false;
+		boolean actualValue=Dao.bookExists(5);
+		assertEquals(expectedValue,actualValue);
+	}
 }

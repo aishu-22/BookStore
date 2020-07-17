@@ -4,12 +4,6 @@ import com.capgemini.bookStore.Exceptions.DeleteBookException;
 
 public interface DeleteBookService {
 
-	static Boolean deleteBook(int id) throws DeleteBookException {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteBook(int bookId) throws DeleteBookException;
 	}
-		// TODO Auto-generated method stub
-		
-	}
-
 

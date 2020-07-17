@@ -1,6 +1,7 @@
 package com.capgemini.bookStore.Entities;
 
-import javax.persistence.Column;import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,6 +27,7 @@ public class BookCategory {
 	@Column(name="category_name")
 	@Size(min=5, max=30)
 	private String categoryName;
+	
 
 	public int getCategoryId() {
 		return categoryId;

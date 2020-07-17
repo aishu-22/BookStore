@@ -2,6 +2,7 @@ package com.capgemini.bookStore.Dao;
 
 public interface DeleteBookDao {
 	
-	Boolean deleteBook(int id);
+	public boolean deleteBook(int bookId);
 
+	public boolean bookExists(int bookId);
 }

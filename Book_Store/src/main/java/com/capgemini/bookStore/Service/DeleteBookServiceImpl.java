@@ -12,13 +12,17 @@ import com.capgemini.bookStore.Exceptions.DeleteBookException;
 @Service
 public class DeleteBookServiceImpl implements DeleteBookService{
 	@Autowired
-	private DeleteBookDao deleteBookDao;
+	private DeleteBookDao dao;
+
+	@Override
+	public String deleteBook(int bookId) throws DeleteBookException {
 	
-	
-	public Boolean deleteBook(int id) throws DeleteBookException {
-		if (deleteBookDao.deleteBook(id) == null) {
-			throw new DeleteBookException("User does not exist");
+		if(dao.bookExists(bookId)) {
+			dao.deleteBook(bookId);
+			return "Book deleted";
+		
 		}
-		return deleteBookDao.deleteBook(id);
+		throw new DeleteBookException("Book does not exist!");
 	}
+	
 }
