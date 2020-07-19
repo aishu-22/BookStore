@@ -14,7 +14,7 @@ import com.capgemini.bookStore.Service.DeleteBookService;
 *                           delete book method  then maps it                              * 
 *                           according to the required handler method.                     *
 *          Version          1.0                                                           *
-*          Created Date     22-JULY-2020                                                  *
+*          Created Date     16-JULY-2020                                                  *
 *******************************************************************************************/
 @RestController
 public class DeleteBookController {
